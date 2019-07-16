@@ -1,0 +1,1 @@
+#Łącznik – DB entries to Model Transfer File/Network converter

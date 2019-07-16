@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DEC41328-9F77-4853-90C5-FB58C6A85D95}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Rosetta</RootNamespace>
+    <AssemblyName>RosettaCore</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config.cs" />
+    <Compile Include="CoreTools\Geometry\GeoPoint.cs" />
+    <Compile Include="CoreTools\Geometry\GeoPolyLine.cs" />
+    <Compile Include="CoreTools\LinqExtension.cs" />
+    <Compile Include="CoreTools\RoE_DataReaderException.cs" />
+    <Compile Include="CoreTools\SqlReaderHelper.cs" />
+    <Compile Include="CoreTools\StringHelper.cs" />
+    <Compile Include="CoreTools\UniqueList.cs" />
+    <Compile Include="DB_Reader\BlaReqVariantDefinition.cs" />
+    <Compile Include="DB_Reader\Prohlis\Pha_62_LineRouteItem.cs" />
+    <Compile Include="DB_Reader\Prohlis\Pha_63_TimeProfile.cs" />
+    <Compile Include="DB_Reader\Prohlis\Pha_64_TimeProfileItems.cs" />
+    <Compile Include="DB_Reader\Prohlis\Pha_65_VehicleJourney.cs" />
+    <Compile Include="DB_Reader\Prohlis\Pha_66_VehJourneySection.cs" />
+    <Compile Include="DB_Reader\Prohlis\Pha_67_LineRouteDirection.cs" />
+    <Compile Include="DB_Reader\Reick\Rck_FhP_Fahrplan.cs" />
+    <Compile Include="DB_Reader\Reick\Rck_HSt_HaltestelleCollector.cs" />
+    <Compile Include="DB_Reader\Reick\Rck_Kur_KurseCollector.cs" />
+    <Compile Include="Model\Common\PuTModel.cs" />
+    <Compile Include="Model\GrunaerWeg_Atts\GrWAtt_VSource.cs" />
+    <Compile Include="DB_Reader\Blasewitz_DataModel\BlaReqBatch.cs" />
+    <Compile Include="DB_Reader\Blasewitz_DataModel\BlaRequest.cs" />
+    <Compile Include="DB_Reader\Blasewitz_DataModel\BlaResultList.cs" />
+    <Compile Include="DB_Reader\Blasewitz_DataModel\BlaResultRow.cs" />
+    <Compile Include="DB_Reader\Blasewitz_DataModel\Blasewitz.cs" />
+    <Compile Include="DB_Reader\Blasewitz_DataModel\BlaVisumDataType.cs" />
+    <Compile Include="DB_Reader\Common\Fabric_of_T.cs" />
+    <Compile Include="DB_Reader\DBConnectionPool.cs" />
+    <Compile Include="DB_Reader\DBReader.cs" />
+    <Compile Include="DB_Reader\DBReaderBatch.cs" />
+    <Compile Include="DB_Reader\Gruna\GruArgTemplateReader.cs" />
+    <Compile Include="DB_Reader\Johannstadt\JohEntity.cs" />
+    <Compile Include="DB_Reader\Johannstadt\JohEntityReader.cs" />
+    <Compile Include="DB_Reader\Prohlis\Pha_01_UDA_Definitions.cs" />
+    <Compile Include="DB_Reader\Prohlis\Pha_04_Mode.cs" />
+    <Compile Include="DB_Reader\Prohlis\Pha_05_DSeg.cs" />
+    <Compile Include="DB_Reader\Prohlis\Pha_120_LinkShapes.cs" />
+    <Compile Include="DB_Reader\Prohlis\Pha_AS_GenericAutomatedSimplified.cs" />
+    <Compile Include="DB_Reader\Reick\Common\Rck_LinkCollcetor_ofT.cs" />
+    <Compile Include="DB_Reader\Reick\Rck_AtV_AttribValues.cs" />
+    <Compile Include="DB_Reader\Reick\Rck_DSeg_DemadSegsCollector.cs" />
+    <Compile Include="DB_Reader\Reick\Rck_LnR_LinkRailCollector.cs" />
+    <Compile Include="DB_Reader\Reick\Rck_LnS_LinkCarCollector.cs" />
+    <Compile Include="DB_Reader\Reick\Rck_LnC_LinkCouplingCollector.cs" />
+    <Compile Include="DB_Reader\Reick\Rck_Mod_ModesCollector.cs" />
+    <Compile Include="DB_Reader\Reick\Rck_Nds_NodeCollector.cs" />
+    <Compile Include="KarlsruherStr\IKarlsruheReady.cs" />
+    <Compile Include="KarlsruherStr\IKarlsruheReadyCollection.cs" />
+    <Compile Include="CoreTools\ValueConv.cs" />
+    <Compile Include="Model\GrunaerWeg_Atts\GrWAttributies.cs" />
+    <Compile Include="DB_Reader\Gruna\GruNauerReader.cs" />
+    <Compile Include="DB_Reader\Gruna\GruStoredProcReader.cs" />
+    <Compile Include="DB_Reader\Reick\Common\IReickQuelle.cs" />
+    <Compile Include="DB_Reader\Prohlis\DataType.cs" />
+    <Compile Include="DB_Reader\Blasewitz_DataModel\BlaVarDefinition.cs" />
+    <Compile Include="DB_Reader\Prohlis\Common\IProhlisArbeitnehmer.cs" />
+    <Compile Include="Model\GrunaerWeg_Atts\GrWAtt_Definition.cs" />
+    <Compile Include="Model\GrunaerWeg_Atts\GrWAtt_ExtClass.cs" />
+    <Compile Include="Model\GrunaerWeg_Atts\GrWAtt_Value.cs" />
+    <Compile Include="Model\GrunaerWeg_Atts\GrWAtt_Values.cs" />
+    <Compile Include="DB_Reader\Blasewitz_DataModel\BlaCommonStorage.cs" />
+    <Compile Include="DB_Reader\Prohlis\Pha_00_VisumHeader.cs" />
+    <Compile Include="DB_Reader\Prohlis\Pha_02_Network.cs" />
+    <Compile Include="DB_Reader\Prohlis\Pha_03_TSys.cs" />
+    <Compile Include="DB_Reader\Prohlis\Pha_41_StopAreas.cs" />
+    <Compile Include="DB_Reader\Prohlis\Pha_40_StopPoints.cs" />
+    <Compile Include="DB_Reader\Prohlis\Pha_42_Stops.cs" />
+    <Compile Include="DB_Reader\Prohlis\Pha_60_Lines.cs" />
+    <Compile Include="DB_Reader\Prohlis\Pha_61_LineRoutes.cs" />
+    <Compile Include="DB_Reader\Prohlis\Pha_GA_GenericAutomated.cs" />
+    <Compile Include="DB_Reader\Prohlis\Pha_10_Nodes.cs" />
+    <Compile Include="DB_Reader\Prohlis\Pha_20_Links.cs" />
+    <Compile Include="DB_Reader\Prohlis\Pha_21_LinkType.cs" />
+    <Compile Include="DB_Reader\Prohlis\Pha_30_Zones.cs" />
+    <Compile Include="DB_Reader\Prohlis\Pha_32_Connectors.cs" />
+    <Compile Include="DB_Reader\Prohlis\Pha_GB_Brewer.cs" />
+    <Compile Include="DB_Reader\Prohlis\Pha_GG_Generic.cs" />
+    <Compile Include="DB_Reader\Prohlis\Common\ProhlisFabric.cs" />
+    <Compile Include="DB_Reader\Reick\Common\Rck_Generic.cs" />
+    <Compile Include="DB_Reader\Reick\Rck_AtD_AttribDefinitions.cs" />
+    <Compile Include="DB_Reader\Reick\Rck_TSys_TSysCollector.cs" />
+    <Compile Include="DB_Reader\Reick\ReickFabric.cs" />
+    <Compile Include="Model\GrunaerWeg_Atts\GrWAtt_Definitions.cs" />
+    <Compile Include="Model\Kaditz\KdzCarLink.cs" />
+    <Compile Include="Model\Kaditz\KdzCouplingLink.cs" />
+    <Compile Include="Model\Kaditz\KdzInfraLink.cs" />
+    <Compile Include="Model\Kaditz\KdzLink.cs" />
+    <Compile Include="Model\Kaditz\KdzLinkList.cs" />
+    <Compile Include="Model\Common\Graph.cs" />
+    <Compile Include="Model\Kaditz\KdzRailLink.cs" />
+    <Compile Include="Model\Mickten\MckNode.cs" />
+    <Compile Include="Model\Mickten\MckNodes.cs" />
+    <Compile Include="Model\Mickten\MckStop.cs" />
+    <Compile Include="Model\Mickten\MckStops.cs" />
+    <Compile Include="Model\Oschatzer_Str\OshFahrplanElementType.cs" />
+    <Compile Include="Model\Oschatzer_Str\OshFahrplanSequence.cs" />
+    <Compile Include="Model\Oschatzer_Str\OshFahrplanSequenceElement.cs" />
+    <Compile Include="Model\OttoDixRing\OdxBetrieber.cs" />
+    <Compile Include="Model\OttoDixRing\OdxBetrieberListe.cs" />
+    <Compile Include="Model\PostPlatz\PosFahrgastMöglichkeiten.cs" />
+    <Compile Include="Model\PostPlatz\PosFahrPlan.cs" />
+    <Compile Include="Model\PostPlatz\PosFahrPlanHalteStelle.cs" />
+    <Compile Include="Model\PostPlatz\PosKurs.cs" />
+    <Compile Include="Model\PostPlatz\PosLineStreckeEinKnoten.cs" />
+    <Compile Include="Model\PostPlatz\PosLinie.cs" />
+    <Compile Include="Model\PostPlatz\PosLinien.cs" />
+    <Compile Include="Model\PostPlatz\PosLinieStrecke.cs" />
+    <Compile Include="Model\Trachau\DemandFoundation.cs" />
+    <Compile Include="Model\Trachau\DemSeg.cs" />
+    <Compile Include="Model\Trachau\DSegList.cs" />
+    <Compile Include="Model\Trachau\Id_Sym_NameObject.cs" />
+    <Compile Include="Model\Common\KarlsruheList_of_T.cs" />
+    <Compile Include="Model\Trachau\Mode.cs" />
+    <Compile Include="Model\Trachau\ModesList.cs" />
+    <Compile Include="Model\Trachau\PrTTSys.cs" />
+    <Compile Include="Model\Trachau\Trachau.cs" />
+    <Compile Include="Model\Trachau\TSys.cs" />
+    <Compile Include="Model\Trachau\TSysList.cs" />
+    <Compile Include="Model\Trachau\TSysSet.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reporting\Enums.cs" />
+    <Compile Include="Reporting\ReportingEventArgs.cs" />
+    <Compile Include="Reporting\RoReMessage.cs" />
+    <Compile Include="Reporting\RoReporter.cs" />
+    <Compile Include="Singleton.cs" />
+    <Compile Include="KarlsruherStr\VF_PfdHelper.cs" />
+    <Compile Include="KarlsruherStr\VF_ProjectTree.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DB_Reader\Prohlis\DataType\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DB_Reader\Reick\Reick.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
